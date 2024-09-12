@@ -1,0 +1,1 @@
+### When React was not introduced how DOM were created using JavaScript, HTML, CSS 

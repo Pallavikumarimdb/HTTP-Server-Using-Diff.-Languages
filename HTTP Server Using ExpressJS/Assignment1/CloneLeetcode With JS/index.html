@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+<body onload="rendLogic1()">
+        <input type="text" placeholder="email"> </input>
+        <input type="text" placeholder="password"> </input>
+        <button>Sign in</button>
+        <button id="but1" onclick="rendLogic1();">1</button>
+        <button id="but2" onclick="rendLogic2();">2</button>
+        <div id="problem-statement" style="width: 78 vw;">
+            <!-- <table>
+                <tr>
+                    <td style="width: 28 vw;">
+
+                    </td>
+                    <td style="width: 28 vw;">
+
+                    </td>
+                    <td style="width: 28 vw;">
+
+                    </td>
+                </tr>
+            </table> -->
+        </div>
+        <script>
+            const problem1 = [{
+                title:"Count the Number of Consistent Strings ",
+                difficulty:"Easy",
+                acceptance:"86.5",
+            
+            },
+            {
+                title:"Add Two Numbers",
+                difficulty:"Medium",
+                acceptance:"44.0",
+            
+            },
+            {
+                title:"Median of Two Sorted Arrays",
+                difficulty:"Hard",
+                acceptance:"41.0",
+            }
+
+        ]
+
+        const problem2 = [{
+                title:"Roman to Integer ",
+                difficulty:"Easy",
+                acceptance:"62.5",
+            
+            },
+            {
+                title:"3Sum",
+                difficulty:"Medium",
+                acceptance:"84.0",
+            
+            },
+            {
+                title:"Reverse Nodes in k-Group",
+                difficulty:"Hard",
+                acceptance:"61.0",
+            }
+
+        ]
+
+        function rendLogic1(){
+            renderProblem(problem1);
+        }
+        function rendLogic2(){
+            renderProblem(problem2);
+        }
+
+        function renderProblem (problem) {
+            document.getElementById("problem-statement").innerHTML = '';
+            const parenEl = document.getElementById("problem-statement");
+            const tableTag = document.createElement("table");
+
+
+            for (let i = 0; i < problem1.length; i++) {
+                const trTag = document.createElement("tr");
+                const tdEl1 = document.createElement("td");
+                tdEl1.innerHTML = problem[i].title;
+                const tdEl2 = document.createElement("td");
+                tdEl2.innerHTML = problem[i].difficulty;
+                const tdEl3 = document.createElement("td");
+                tdEl3.innerHTML = problem[i].acceptance;
+
+                trTag.appendChild(tdEl1);
+                trTag.appendChild(tdEl2);
+                trTag.appendChild(tdEl3);
+                tableTag.appendChild(trTag);  
+            }
+            parenEl.appendChild(tableTag);
+        }
+        // renderProblem();
+
+        // function renderProblem2 (clicked_id) {
+        //     document.getElementById("problem-statement").innerHTML = '';
+        //     const parenEl = document.getElementById("problem-statement");
+        //     const tableTag = document.createElement("table");
+
+
+        //     for (let i = 0; i < problem2.length; i++) {
+        //         const trTag = document.createElement("tr");
+        //         const tdEl1 = document.createElement("td");
+        //         tdEl1.innerHTML = problem2[i].title;
+        //         const tdEl2 = document.createElement("td");
+        //         tdEl2.innerHTML = problem2[i].difficulty;
+        //         const tdEl3 = document.createElement("td");
+        //         tdEl3.innerHTML = problem2[i].acceptance;
+
+        //         trTag.appendChild(tdEl1);
+        //         trTag.appendChild(tdEl2);
+        //         trTag.appendChild(tdEl3);
+        //         tableTag.appendChild(trTag);  
+        //     }
+        //     parenEl.appendChild(tableTag);
+        // }
+        // renderProblem2();
+
+        // function clearContent1(){
+        //     document.getElementById("problem-statement").innerHTML = '';
+        // }
+        
+        // function to render new problems and remove old problems as people change Qn using JS.
+        // As we know we will get the array of problems from the server in an HTTP request.
+        // For now we have hardcoded array above but we can fetch from server also.
+        </script>
+    </body>
+</html>
